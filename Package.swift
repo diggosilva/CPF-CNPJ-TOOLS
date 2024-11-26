@@ -1,35 +1,23 @@
+// swift-tools-version: 5.10
 import PackageDescription
 
 let package = Package(
-    name: "CPFCNPJTools",  // Nome do pacote, deve ser o mesmo usado no CocoaPods
-    platforms: [
-        .iOS(.v9),  // Versão mínima do iOS
-    ],
+    name: "CPFCNPJTools",
     products: [
         .library(
-            name: "CPFCNPJTools",  // Nome da biblioteca que será gerada
-            targets: ["CPFCNPJTools"]  // Nome do target
+            name: "CPFCNPJTools",
+            targets: ["CPFCNPJTools"]
         ),
-    ],
-    dependencies: [
-        // Caso tenha dependências externas, você adiciona aqui
     ],
     targets: [
         .target(
-            name: "CPFCNPJTools",  // Nome do target
-            dependencies: [],  // Dependências internas ou externas
-            path: "Sources",  // Caminho do código fonte
-            resources: [
-                // Adicionar recursos se necessário
-            ]
+            name: "CPFCNPJTools",
+            path: "CPFCNPJTools/Source"
         ),
         .testTarget(
-            name: "CPFCNPJToolsTests",  // Nome do target de testes
-            dependencies: ["CPFCNPJTools"],  // Dependência da biblioteca principal
-            path: "Tests",  // Caminho dos testes
-            resources: [
-                // Adicionar recursos de testes, se necessário
-            ]
+            name: "CPFCNPJTools-Unit-Tests",
+            dependencies: ["CPFCNPJTools"],
+            path: "CPFCNPJTools/Tests"
         ),
     ]
 )
